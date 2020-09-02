@@ -1,0 +1,33 @@
+// BASE STYLES
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //This define 1 rem. And 1 rem = 10px
+  font-size: 62.5%; // 10px/16px = 62.5%
+  /*   scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  } */
+}
+
+html,
+body {
+  height: 100%;
+  font-family: $poppins;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  font-size: 1.6rem;
+}
