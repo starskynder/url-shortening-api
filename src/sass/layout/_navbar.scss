@@ -1,0 +1,131 @@
+// NAVBAR
+.nav {
+  background-color: $white;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: $darkviolet;
+
+  @media screen and (min-width: 75em) {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+
+  &__navigation {
+    flex: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    background-color: $white;
+    padding: 1.7rem;
+
+    @media screen and (min-width: 75em) {
+      flex: initial;
+    }
+  }
+
+  &__login {
+    display: flex;
+    flex-flow: column nowrap;
+    font-weight: bold;
+    padding: 1.7rem;
+    margin: 0 2rem;
+    background-color: $darkviolet;
+    @media screen and (min-width: 75em) {
+      flex-flow: row nowrap;
+      background-color: transparent;
+      align-items: center;
+      border-radius: none;
+      margin-left: auto;
+    }
+  }
+
+  &__list {
+    background-color: $darkviolet;
+    list-style-type: none;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 10px 10px 0 0;
+    margin: 0 2rem;
+
+    text-transform: capitalize;
+
+    @media screen and (min-width: 75em) {
+      flex-flow: row wrap;
+      background-color: transparent;
+      border-radius: none;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    margin: 1rem auto;
+    max-width: 60rem;
+    width: 100%;
+
+    @media screen and (min-width: 75em) {
+      width: auto;
+    }
+  }
+
+  &__item:last-of-type {
+    border-bottom: 1px solid $graysh-violet;
+    @media screen and (min-width: 75em) {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 1.8rem;
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: $white;
+
+      @media screen and (min-width: 75em) {
+        color: $graysh-violet;
+      }
+    }
+  }
+
+  &__link:last-of-type {
+    @media screen and (min-width: 75em) {
+      margin-right: auto;
+    }
+  }
+
+  &__logo {
+    margin-right: auto;
+    display: inline-block;
+
+    @media screen and (min-width: 75em) {
+      margin-right: 0;
+    }
+  }
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    display: block;
+  }
+
+  &__btn--line {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 30px;
+    background-color: $graysh-violet;
+    margin: 9px;
+  }
+}

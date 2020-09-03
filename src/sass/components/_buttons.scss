@@ -1,0 +1,30 @@
+// BUTTONS
+.btn__login {
+  background-color: transparent;
+  color: $white;
+  border: none;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  font-family: inherit;
+  display: block;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-weight: inherit;
+  margin: 1rem 0;
+
+  margin: 1rem auto;
+  max-width: 60rem;
+  width: 90%;
+  @media screen and (min-width: 75em) {
+    color: $graysh-violet;
+    margin: 0;
+    width: auto;
+  }
+}
+
+.btn__signup {
+  @extend .btn__login;
+  border-radius: 30px;
+  background-color: $cyan;
+  color: $white;
+}
