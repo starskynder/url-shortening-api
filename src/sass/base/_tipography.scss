@@ -1,0 +1,9 @@
+// TIPOGRAPHY
+.heading__primary {
+  font-size: 3.6rem;
+  color: $very-dark-violet;
+
+  @media screen and (min-width: 75em) {
+    font-size: 5.4rem;
+  }
+}
