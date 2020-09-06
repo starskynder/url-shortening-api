@@ -1,0 +1,49 @@
+// HEADER
+.header {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 75em) {
+    flex-flow: row-reverse nowrap;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  &__img {
+    padding: 2rem;
+
+    @media screen and (min-width: 75em) {
+      flex: 1;
+    }
+
+    // img {
+    //   transform: translateX(20%);
+    // }
+  }
+
+  &__content {
+    padding: 2rem;
+    max-width: 50rem;
+    @media screen and (min-width: 75em) {
+      max-width: auto;
+      flex: 2;
+    }
+  }
+
+  &__text {
+    color: $graysh-violet;
+    margin: 2rem 0;
+    font-size: 1.8rem;
+  }
+
+  &__btn {
+    max-width: 40%;
+
+    @media screen and (min-width: 75em) {
+      margin-right: auto;
+    }
+  }
+}
