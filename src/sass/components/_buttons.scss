@@ -15,6 +15,12 @@
   margin: 1rem auto;
   max-width: 60rem;
   width: 90%;
+
+  &:focus,
+  &:hover {
+    color: $very-dark-violet;
+  }
+
   @media screen and (min-width: 75em) {
     color: $graysh-violet;
     margin: 0;
@@ -27,4 +33,10 @@
   border-radius: 30px;
   background-color: $cyan;
   color: $white;
+
+  &:focus,
+  &:hover {
+    background-color: lighten($color: $cyan, $amount: 20%);
+    color: $white;
+  }
 }

@@ -23,7 +23,7 @@ const Navbar = ({ sections, logo, login }) => {
   useEffect(() => {
     setWidth(window.innerWidth);
     window.addEventListener("resize", () => setWidth(window.innerWidth));
-  });
+  }, []);
 
   useEffect(() => {
     if (width > 1200) {
