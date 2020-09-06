@@ -28,7 +28,8 @@
   }
 }
 
-.btn__signup {
+.btn__signup,
+.primary__btn {
   @extend .btn__login;
   border-radius: 30px;
   background-color: $cyan;
@@ -39,4 +40,9 @@
     background-color: lighten($color: $cyan, $amount: 20%);
     color: $white;
   }
+}
+
+.primary__btn {
+  text-decoration: none;
+  margin: auto;
 }
