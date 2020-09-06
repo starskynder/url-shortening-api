@@ -23,6 +23,11 @@ body {
   font-family: $poppins;
 }
 
+body {
+  max-width: 120rem;
+  margin: auto;
+}
+
 img {
   max-width: 100%;
   height: auto;
