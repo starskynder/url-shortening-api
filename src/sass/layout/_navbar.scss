@@ -64,6 +64,14 @@
     }
   }
 
+  &__close {
+    display: none;
+
+    @media screen and (min-width: 75em) {
+      display: flex;
+    }
+  }
+
   &__item {
     text-align: center;
     padding: 1rem;
@@ -123,6 +131,10 @@
     border: none;
     background-color: transparent;
     display: block;
+
+    @media screen and (min-width: 75em) {
+      display: none;
+    }
   }
 
   &__btn--line {
