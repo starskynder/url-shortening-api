@@ -1,0 +1,116 @@
+// SHORTENING SEARCH
+.shorten {
+  padding: 4rem 2rem;
+  background-image: linear-gradient(
+    to bottom,
+    $white 50%,
+    lighten($gray, 18%) 50%
+  );
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    background-color: $darkviolet;
+    padding: 4rem 2rem;
+    border-radius: 5px;
+    margin: auto;
+    background-image: url(../../images/bg-shorten-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+
+    @media screen and (min-width: 75em) {
+      background-image: url(../../images/bg-shorten-desktop.svg);
+      background-size: cover;
+    }
+  }
+
+  &__search,
+  &__submit {
+    display: block;
+    font-size: 1.8rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin: 1rem;
+  }
+  &__submit {
+    background-color: $cyan;
+    color: $white;
+    font-weight: bold;
+  }
+
+  &__search {
+    flex-grow: 3;
+  }
+}
+
+.results {
+  background-color: lighten($gray, 18%);
+  list-style-type: none;
+  margin: auto;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 2rem;
+
+  &__item {
+    font-size: 1.8rem;
+    background-color: $white;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    @media screen and (min-width: 40em) {
+      justify-content: space-between;
+    }
+  }
+
+  &__url,
+  &__linkshort {
+    padding: 1rem;
+    text-align: left;
+  }
+
+  &__url {
+  }
+
+  &__btn {
+    border: none;
+    display: block;
+    background-color: $cyan;
+    color: $white;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    flex-grow: 1;
+    font-size: 1.6rem;
+    margin: 1rem;
+    border-radius: 10px;
+  }
+
+  &__linkshort {
+    border-top: 1px solid lighten($gray, 18%);
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+
+    @media screen and (min-width: 40em) {
+      flex-flow: row wrap;
+      align-items: center;
+
+      justify-content: space-between;
+    }
+
+    a {
+      margin: 1rem;
+      &:link {
+        color: $cyan;
+      }
+    }
+  }
+}

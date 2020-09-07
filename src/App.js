@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import Shorten from "./components/Shorten";
 import "./sass/main.scss";
 import logo from "./images/logo.svg";
 import headerImg from "./images/illustration-working.svg";
@@ -18,6 +19,7 @@ function App() {
         text=" Build your brand’s recognition and get detailed insights on how your links are performing."
         img={headerImg}
       />
+      <Shorten />
     </div>
   );
 }
