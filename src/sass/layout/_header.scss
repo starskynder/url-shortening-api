@@ -14,7 +14,7 @@
 
   &__img {
     padding: 2rem;
-
+    max-width: 60rem;
     @media screen and (min-width: 75em) {
       flex: 1;
     }
