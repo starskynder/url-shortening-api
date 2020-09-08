@@ -47,17 +47,19 @@ const Shorten = () => {
       </form>
       {data.length > 0 ? (
         <ul className="results">
-          {data.map((item) => {
+          {data.map((item, index) => {
             return (
-              <li className="results__item">
-                <div className="results__url">{item.url}</div>
+              <li className="results__listitem" key={index}>
+                <div className="results__item">{item.url}</div>
 
-                <div className="results__linkshort">
-                  <a
-                    href={`https://rel.ink/${item.hashid}`}
-                  >{`https://rel.ink/${item.hashid}`}</a>
-                  <button className="results__btn ">Copy</button>
-                </div>
+                <a
+                  className="results__item results__link"
+                  href={`https://rel.ink/${item.hashid}`}
+                >{`https://rel.ink/${item.hashid}`}</a>
+
+                <button className="results__btn--copy  results__item">
+                  Copy
+                </button>
               </li>
             );
           })}
