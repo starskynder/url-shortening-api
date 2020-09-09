@@ -51,9 +51,7 @@ const Shorten = () => {
               onChange={handleChange}
             />
           </div>
-          {/*       {warning ? (
-            <span className="shorten__warning">Please add a link</span>
-          ) : null} */}
+
           <input
             type="submit"
             className="shorten__submit "
