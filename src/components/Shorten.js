@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Shorten = () => {
   const [value, setValue] = useState("");
-
+  const [warning, setWarning] = useState(false);
   const [data, setData] = useState([]);
 
   const handleChange = (e) => {
@@ -14,7 +14,10 @@ const Shorten = () => {
     console.log("here");
     e.preventDefault();
     if (value === "") {
+      setWarning(true);
+      return;
     }
+    setWarning(false);
     fetch("https://rel.ink/api/links/", {
       method: "POST",
       headers: {
@@ -32,12 +35,25 @@ const Shorten = () => {
     <>
       <form className="shorten" onSubmit={handleSubmit}>
         <div className="shorten__wrapper">
-          <input
-            type="search"
-            className="shorten__search"
-            placeholder="Shorten a link here..."
-            onChange={handleChange}
-          />
+          <div
+            className={
+              warning
+                ? "shorten__container shorten__warning"
+                : "shorten__container"
+            }
+          >
+            <input
+              type="search"
+              className={
+                warning ? "shorten__search shorten__warn" : "shorten__search"
+              }
+              placeholder="Shorten a link here..."
+              onChange={handleChange}
+            />
+          </div>
+          {/*       {warning ? (
+            <span className="shorten__warning">Please add a link</span>
+          ) : null} */}
           <input
             type="submit"
             className="shorten__submit "
