@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
+import Loader from "../components/Loader";
 
 const Shorten = () => {
   const [value, setValue] = useState("");
   const [warning, setWarning] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(
+    JSON.parse(localStorage.getItem("links")) || []
+  );
+  const [loading, setLoading] = useState(false);
+  console.log(data);
+  useEffect(() => {
+    localStorage.setItem("links", JSON.stringify(data));
+  }, [data]);
 
   const handleChange = (e) => {
     const input = e.target.value;
@@ -18,6 +27,7 @@ const Shorten = () => {
       return;
     }
     setWarning(false);
+    setLoading(true);
     fetch("https://rel.ink/api/links/", {
       method: "POST",
       headers: {
@@ -27,8 +37,28 @@ const Shorten = () => {
     })
       .then((res) => res.json())
       .then((response) => {
-        setData([...data, response]);
+        setData([...data, { ...response, btn: false, id: uuidv4() }]);
+        setLoading(false);
       });
+  };
+
+  const handleCopy = (btn) => {
+    navigator.clipboard.writeText(`https://rel.ink/${btn.hashid}`);
+    console.log("copying!");
+    const id = btn.id;
+    console.log(id);
+    const newData = data.map((item) => {
+      if (item.id === id) {
+        console.log("hello");
+        item.btn = true;
+        return item;
+      } else {
+        item.btn = false;
+        return item;
+      }
+    });
+
+    setData(newData);
   };
 
   return (
@@ -59,11 +89,12 @@ const Shorten = () => {
           />
         </div>
       </form>
+      {loading ? <Loader /> : null}
       {data.length > 0 ? (
         <ul className="results">
-          {data.map((item, index) => {
+          {data.map((item) => {
             return (
-              <li className="results__listitem" key={index}>
+              <li className="results__listitem" key={item.id}>
                 <div className="results__item">{item.url}</div>
 
                 <a
@@ -71,8 +102,15 @@ const Shorten = () => {
                   href={`https://rel.ink/${item.hashid}`}
                 >{`https://rel.ink/${item.hashid}`}</a>
 
-                <button className="results__btn--copy  results__item">
-                  Copy
+                <button
+                  className={
+                    item.btn
+                      ? " results__item results__btn--copy results__btn--copied"
+                      : "results__btn--copy  results__item"
+                  }
+                  onClick={() => handleCopy(item)}
+                >
+                  {item.btn ? "Copied!" : "Copy"}
                 </button>
               </li>
             );

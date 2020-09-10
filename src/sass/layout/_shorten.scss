@@ -76,6 +76,11 @@
     background-color: $cyan;
     color: $white;
     font-weight: bold;
+
+    &:focus,
+    &:hover {
+      background-color: lighten($cyan, 20%);
+    }
   }
 
   &__search {
@@ -88,7 +93,7 @@
   list-style-type: none;
   margin: auto;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column-reverse wrap;
   padding: 2rem;
 
   &__listitem {
@@ -99,6 +104,7 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: stretch;
+    margin: 2rem 0;
 
     @media screen and (min-width: 52em) {
       flex-flow: row wrap;
@@ -122,6 +128,7 @@
 
     @media screen and (min-width: 52em) {
       border-top: none;
+      text-align: right;
     }
     &:link,
     &:visited {
@@ -137,6 +144,24 @@
     background-color: $cyan;
     color: $white;
     font-weight: bold;
-    flex: 1;
+    flex-grow: 1;
+    @media screen and (min-width: 52em) {
+      min-width: 10rem;
+      max-width: 10rem;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: lighten($cyan, 20%);
+    }
+  }
+
+  &__btn--copied {
+    background-color: $darkviolet;
+
+    &:focus,
+    &:hover {
+      background-color: lighten($darkviolet, 20%);
+    }
   }
 }
