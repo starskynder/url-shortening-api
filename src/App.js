@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Shorten from "./components/Shorten";
+import Statistics from "./components/Statistics";
 import "./sass/main.scss";
 import logo from "./images/logo.svg";
 import headerImg from "./images/illustration-working.svg";
@@ -20,6 +21,7 @@ function App() {
         img={headerImg}
       />
       <Shorten />
+      <Statistics />
     </div>
   );
 }

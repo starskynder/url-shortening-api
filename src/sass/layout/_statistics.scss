@@ -1,0 +1,137 @@
+// STATISTICS
+.statistics {
+  background-color: lighten($gray, 18%);
+  padding: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+
+  &__text {
+    color: $graysh-violet;
+    margin-top: 2rem;
+  }
+
+  &__boxes {
+    font-size: inherit;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    color: $graysh-violet;
+    position: relative;
+
+    @media screen and (min-width: 75em) {
+      height: 40rem;
+    }
+
+    &::before {
+      left: 50%;
+      top: 2rem;
+
+      position: absolute;
+
+      z-index: 0;
+      content: "";
+      width: 8px;
+      height: 90%;
+      background-color: $cyan;
+
+      @media screen and (min-width: 75em) {
+        width: 90%;
+        height: 8px;
+        top: 50%;
+        left: 2rem;
+      }
+    }
+
+    @media screen and (min-width: 75em) {
+      flex-flow: row wrap;
+
+      &:first-child {
+        align-self: flex-start;
+      }
+
+      &:nth-child(2) {
+        align-self: center;
+      }
+
+      &:nth-child(3) {
+        align-self: flex-end;
+      }
+    }
+  }
+
+  .one {
+    @media screen and (min-width: 75em) {
+      align-self: flex-start;
+    }
+  }
+
+  .two {
+    @media screen and (min-width: 75em) {
+      align-self: center;
+    }
+  }
+
+  .three {
+    @media screen and (min-width: 75em) {
+      align-self: flex-end;
+    }
+  }
+
+  &__box {
+    margin: 4rem 2rem;
+    max-width: 50rem;
+    background-color: $white;
+    border-radius: 10px;
+    z-index: 2;
+    padding: 5rem 2rem;
+    position: relative;
+    &-text {
+      color: $graysh-violet;
+    }
+
+    @media screen and (min-width: 75em) {
+      max-width: 30rem;
+    }
+  }
+
+  &__boxtitle {
+    margin: 2rem 0;
+  }
+
+  &__title {
+    font-size: inherit;
+    text-align: center;
+    margin: 4rem 0;
+    max-width: 50rem;
+  }
+
+  &__imgwrap {
+    position: absolute;
+    border-radius: 50%;
+
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__img {
+    border-radius: 50%;
+    width: 8.5rem;
+    height: 8.5rem;
+    background-color: $darkviolet;
+    position: relative;
+
+    img {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
