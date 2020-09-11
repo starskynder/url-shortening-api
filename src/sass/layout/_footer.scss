@@ -1,0 +1,62 @@
+// FOOTER
+.footer {
+  background-color: $very-dark-violet;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  &__list {
+    list-style-type: none;
+    font-size: 1.4rem;
+    color: $white;
+    flex: 100%;
+    text-align: center;
+    margin: 1rem 0;
+
+    @media screen and (min-width: 75em) {
+      flex: initial;
+    }
+  }
+
+  &__listitem {
+    padding: 0 1rem 1rem 1rem;
+    text-transform: capitalize;
+  }
+
+  &__listitem:first-of-type {
+    font-weight: bold;
+  }
+
+  &__logo {
+    padding: 1rem;
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: $graysh-violet;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: $cyan;
+    }
+  }
+
+  &__socials {
+    padding: 4rem 2rem;
+  }
+
+  &__social {
+    color: $white;
+    font-size: 2.5rem;
+    margin: 1rem;
+  }
+}

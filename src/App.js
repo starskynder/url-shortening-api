@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Shorten from "./components/Shorten";
 import Statistics from "./components/Statistics";
 import Boost from "./components/Boost";
+import Footer from "./components/Footer";
 import "./sass/main.scss";
 import logo from "./images/logo.svg";
 import headerImg from "./images/illustration-working.svg";
@@ -24,6 +25,7 @@ function App() {
       <Shorten />
       <Statistics />
       <Boost />
+      <Footer />
     </div>
   );
 }
