@@ -1,0 +1,21 @@
+// BOOST SECTION
+.boost {
+  background-color: $darkviolet;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: stretch;
+  align-items: center;
+  padding: 4rem 1rem;
+
+  &__title {
+    margin: 2rem;
+  }
+
+  background-image: url(../../images/bg-boost-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (min-width: 37.5em) {
+    background-image: url(../../images/bg-boost-desktop.svg);
+  }
+}
