@@ -7,3 +7,18 @@
     font-size: 5.4rem;
   }
 }
+
+.heading__secondary {
+  color: $darkviolet;
+  font-size: 2.6rem;
+  font-weight: bold;
+
+  @media screen and (min-width: 75em) {
+    font-size: 3.4rem;
+  }
+}
+
+.heading__tertiary {
+  color: $very-dark-violet;
+  font-size: 2rem;
+}
