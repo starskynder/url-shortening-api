@@ -9,6 +9,8 @@ const Shorten = () => {
     JSON.parse(localStorage.getItem("links")) || []
   );
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
   console.log(data);
   useEffect(() => {
     localStorage.setItem("links", JSON.stringify(data));
@@ -39,6 +41,11 @@ const Shorten = () => {
       .then((response) => {
         setData([...data, { ...response, btn: false, id: uuidv4() }]);
         setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+        setError(true);
       });
   };
 
@@ -89,7 +96,11 @@ const Shorten = () => {
           />
         </div>
       </form>
+      {error ? (
+        <div className="shorten__error">Sorry Something went wrong!</div>
+      ) : null}
       {loading ? <Loader /> : null}
+
       {data.length > 0 ? (
         <ul className="results">
           {data.map((item) => {
