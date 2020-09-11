@@ -86,6 +86,7 @@ const Shorten = () => {
               }
               placeholder="Shorten a link here..."
               onChange={handleChange}
+              title="Type search term here"
             />
           </div>
 
