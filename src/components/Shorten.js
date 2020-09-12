@@ -11,7 +11,6 @@ const Shorten = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  console.log(data);
   useEffect(() => {
     localStorage.setItem("links", JSON.stringify(data));
   }, [data]);
@@ -22,7 +21,6 @@ const Shorten = () => {
   };
 
   const handleSubmit = (e) => {
-    console.log("here");
     e.preventDefault();
     if (value === "") {
       setWarning(true);
@@ -51,12 +49,11 @@ const Shorten = () => {
 
   const handleCopy = (btn) => {
     navigator.clipboard.writeText(`https://rel.ink/${btn.hashid}`);
-    console.log("copying!");
+
     const id = btn.id;
-    console.log(id);
+
     const newData = data.map((item) => {
       if (item.id === id) {
-        console.log("hello");
         item.btn = true;
         return item;
       } else {

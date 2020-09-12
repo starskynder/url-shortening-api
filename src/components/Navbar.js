@@ -4,7 +4,6 @@ const Navbar = ({ sections, logo, login }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const items = [...sections];
-  console.log(items);
 
   return (
     <nav className="nav">
