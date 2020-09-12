@@ -59,4 +59,12 @@
     font-size: 2.5rem;
     margin: 1rem;
   }
+
+  &__attribution {
+    flex: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 1.4rem;
+    color: $gray;
+  }
 }

@@ -70,7 +70,7 @@ const Shorten = () => {
 
   return (
     <>
-      <form className="shorten" onSubmit={handleSubmit}>
+      <form className="shorten" onSubmit={handleSubmit} id="shorten">
         <div className="shorten__wrapper">
           <div
             className={

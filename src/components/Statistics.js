@@ -5,7 +5,7 @@ import customizable from "../images/icon-fully-customizable.svg";
 
 const Statistics = () => {
   return (
-    <div className="statistics">
+    <div className="statistics" id="features">
       <div className="statistics__title">
         <h2 className="heading__secondary">Advanced Statistics</h2>
         <p className="statistics__text">

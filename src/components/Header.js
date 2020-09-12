@@ -9,7 +9,7 @@ const Header = ({ title, text, img }) => {
       <div className="header__content">
         <h1 className="heading__primary">{title}</h1>
         <p className="header__text">{text}</p>
-        <a href="#" className="primary__btn header__btn">
+        <a href="#shorten" className="primary__btn header__btn">
           Get Started
         </a>
       </div>
