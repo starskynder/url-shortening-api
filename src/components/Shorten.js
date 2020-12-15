@@ -28,16 +28,18 @@ const Shorten = () => {
     }
     setWarning(false);
     setLoading(true);
-    fetch("https://rel.ink/api/links/", {
+
+    fetch(`https://api.shrtco.de/v2/shorten?url=${value}`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ url: value }),
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
+      // body: JSON.stringify({ url: value }),
     })
       .then((res) => res.json())
       .then((response) => {
-        setData([...data, { ...response, btn: false, id: uuidv4() }]);
+        console.log(response);
+        setData([...data, { ...response.result, btn: false, id: uuidv4() }]);
         setLoading(false);
       })
       .catch((err) => {
@@ -48,7 +50,7 @@ const Shorten = () => {
   };
 
   const handleCopy = (btn) => {
-    navigator.clipboard.writeText(`https://rel.ink/${btn.hashid}`);
+    navigator.clipboard.writeText(`${btn.short_link}`);
 
     const id = btn.id;
 
@@ -104,12 +106,14 @@ const Shorten = () => {
           {data.map((item) => {
             return (
               <li className="results__listitem" key={item.id}>
-                <div className="results__item">{item.url}</div>
+                <div className="results__item">{item.original_link}</div>
 
                 <a
                   className="results__item results__link"
-                  href={`https://rel.ink/${item.hashid}`}
-                >{`https://rel.ink/${item.hashid}`}</a>
+                  href={item.original_link}
+                >
+                  {item.short_link}
+                </a>
 
                 <button
                   className={
