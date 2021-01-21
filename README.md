@@ -9,5 +9,5 @@ The challenge was to build out a landing page, integrate with the [shrtcode API 
 
 ## Solution
 
-The page is done in React, usin Sass with BEM naming. <br>
+The page is done in React, using Sass with BEM naming. <br>
 You can see my working solution here: https://starskynder.github.io/url-shortening-api/
